@@ -19,10 +19,10 @@ Dashboard https://dashboard.pluralis.ai/
 Обновляем зависимости:
 ```
 apt update -y && apt upgrade -y
+```
 
 ## Вариант1 с docker
 
-```
 Обновляем docker, на datacrunch оказался устаревшим
 ```
 sudo apt install apt-transport-https ca-certificates curl software-properties-common -y
