@@ -9,6 +9,8 @@ Minimum 80GB disk space (required for Docker image)
 Получить роль в дискорде:
 В ветке join-run запускаем `!join-run`
 
+Dashboard https://dashboard.pluralis.ai/
+
 Взял на https://cloud.datacrunch.io/ Tesla V100 с жестким диском 130Gb за 0.171$/h (Ubuntu 24.04 + CUDA 12.6 + Docker).
 Но там RAM немного не хватает 23Gb.
 
