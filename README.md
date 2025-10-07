@@ -6,7 +6,7 @@ Minimum 16GB GPU memory
 Minimum 32GB RAM
 Minimum 80GB disk space (required for Docker image)
 
-Взял на https://cloud.datacrunch.io/ Tesla V100 с жестким диском 120Gb за 0.171$/h (Ubuntu 24.04 + CUDA 12.6 + Docker).
+Взял на https://cloud.datacrunch.io/ Tesla V100 с жестким диском 130Gb за 0.171$/h (Ubuntu 24.04 + CUDA 12.6 + Docker).
 Но там RAM немного не хватает 23Gb.
 
 Начинаем установку
@@ -59,9 +59,11 @@ Server is started. See run.out for the output.
 ```
 
 проверим есть ли контейнер
+```
 docker ps -a
 CONTAINER ID   IMAGE            COMMAND                  CREATED          STATUS          PORTS     NAMES
 b5f483cfa828   pluralis_node0   "/opt/nvidia/nvidia_…"   57 seconds ago   Up 57 seconds             node0_251007130136
+```
 
 проверим потребление ГПУ
 
