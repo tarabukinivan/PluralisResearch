@@ -74,6 +74,53 @@ b5f483cfa828   pluralis_node0   "/opt/nvidia/nvidia_…"   57 seconds ago   Up 5
 ```
 
 проверим потребление ГПУ
-
-
 Проверяем логи в файле run.out
+
+## Вариант2 runpod cli
+
+Использую шаблон "Runpod Pytorch 2.8.0", беру RTX A4500
+Возле шаблона нажать Edit и в "Expose TCP Ports" добавить 49200, Container Disk увеличиваю до 150Gb также отключил jupiter
+
+```
+apt update -y && \
+apt install sudo -y && \
+apt install nano -y && \
+sudo update-alternatives --install /usr/bin/python python /usr/bin/python3 1
+```
+
+Установка
+```
+git clone https://github.com/PluralisResearch/node0
+cd node0
+
+#установка conda
+mkdir -p ~/miniconda3 && wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda3/miniconda.sh && bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3 && rm -rf ~/miniconda3/miniconda.sh && ~/miniconda3/bin/conda init bash && ~/miniconda3/bin/conda init zsh
+bash
+
+#на вопрос о "Do you accept the Terms of Service (ToS)" пишем accept
+conda create -n node0 python=3.11
+conda activate node0
+
+# Install node0
+pip install .
+```
+Подготавливаем HuggingFace token и email и генерируем скрипт запуска
+```
+python3 generate_script.py
+```
+
+На вопрос "Do you want to change anything? [Y/n]" вводи n
+
+На нашем pod в вебинтерфейсе рунпода смотрим "Direct TCP Ports". У меня :14878 -> :49200
+Открываем start_server.sh и меняем в --announce_maddrs порт, например /ip4/213.175.107.143/tcp/14878`
+
+И запускаем
+
+```
+apt install tmux -y && \
+tmux new-session -s runnode
+
+#внутри tmux
+conda activate node0 && \
+./start_server.sh
+```
