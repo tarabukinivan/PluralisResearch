@@ -76,11 +76,13 @@ b5f483cfa828   pluralis_node0   "/opt/nvidia/nvidia_…"   57 seconds ago   Up 5
 ```
 
 проверим потребление ГПУ
+
 Проверяем логи в файле run.out
 
 ## Вариант2 runpod cli
 
 Использую шаблон "Runpod Pytorch 2.8.0", беру RTX A4500 $0,28/hr
+
 Возле шаблона нажать Edit и в "Expose TCP Ports" добавить 49200, Container Disk увеличиваю до 150Gb также отключил jupiter
 
 ```
@@ -114,6 +116,7 @@ python3 generate_script.py
 На вопрос "Do you want to change anything? [Y/n]" вводи n
 
 На нашем pod в вебинтерфейсе рунпода смотрим "Direct TCP Ports". У меня :14878 -> :49200
+
 Открываем start_server.sh и меняем в --announce_maddrs порт, например /ip4/213.175.107.143/tcp/14878`
 
 И запускаем
