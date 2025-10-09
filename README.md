@@ -115,7 +115,7 @@ python3 generate_script.py
 
 На вопрос "Do you want to change anything? [Y/n]" вводим n
 
-На нашем pod в вебинтерфейсе рунпода смотрим "Direct TCP Ports". У меня :14878 -> :49200
+На нашем pod в вебинтерфейсе рунпода смотрим "Direct TCP Ports". У меня `ip:14878 -> :49200`
 
 Открываем start_server.sh и меняем в --announce_maddrs порт, например /ip4/213.175.107.143/tcp/14878`
 
