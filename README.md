@@ -113,7 +113,7 @@ pip install .
 python3 generate_script.py
 ```
 
-На вопрос "Do you want to change anything? [Y/n]" вводи n
+На вопрос "Do you want to change anything? [Y/n]" вводим n
 
 На нашем pod в вебинтерфейсе рунпода смотрим "Direct TCP Ports". У меня :14878 -> :49200
 
@@ -130,6 +130,6 @@ conda activate node0 && \
 ./start_server.sh
 ```
 
-Присоединение к узлам
+##Присоединение к узлам
 
 Если выходит "[ERROR] [node0.security.authorization.authorize_with_pluralis:342] Authorization failed: Our servers are currently at full capacity. Exiting run." значит сейчас вход закрыт, нужно ждать когда откроют вход новым пользователям и попробовать снова
