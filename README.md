@@ -130,6 +130,6 @@ conda activate node0 && \
 ./start_server.sh
 ```
 
-##Присоединение к узлам
+## Присоединение к узлам
 
-Если выходит "[ERROR] [node0.security.authorization.authorize_with_pluralis:342] Authorization failed: Our servers are currently at full capacity. Exiting run." значит сейчас вход закрыт, нужно ждать когда откроют вход новым пользователям и попробовать снова
+Если выходит `[ERROR] [node0.security.authorization.authorize_with_pluralis:342] Authorization failed: Our servers are currently at full capacity. Exiting run.` значит сейчас вход закрыт, нужно ждать когда откроют вход новым пользователям и попробовать снова
