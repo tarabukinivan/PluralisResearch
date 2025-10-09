@@ -13,6 +13,8 @@ Minimum 80GB disk space (required for Docker image)
 
 Dashboard https://dashboard.pluralis.ai/
 
+## Вариант1 с docker
+
 Взял на https://cloud.datacrunch.io/ Tesla V100 с жестким диском 130Gb за 0.171$/h (Ubuntu 24.04 + CUDA 12.6 + Docker).
 Но там RAM немного не хватает 23Gb.
 
@@ -22,8 +24,6 @@ Dashboard https://dashboard.pluralis.ai/
 ```
 apt update -y && apt upgrade -y
 ```
-
-## Вариант1 с docker
 
 Обновляем docker, на datacrunch оказался устаревшим
 ```
@@ -80,7 +80,7 @@ b5f483cfa828   pluralis_node0   "/opt/nvidia/nvidia_…"   57 seconds ago   Up 5
 
 ## Вариант2 runpod cli
 
-Использую шаблон "Runpod Pytorch 2.8.0", беру RTX A4500
+Использую шаблон "Runpod Pytorch 2.8.0", беру RTX A4500 $0,28/hr
 Возле шаблона нажать Edit и в "Expose TCP Ports" добавить 49200, Container Disk увеличиваю до 150Gb также отключил jupiter
 
 ```
