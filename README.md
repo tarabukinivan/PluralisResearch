@@ -1,10 +1,12 @@
 # PluralisResearch на русском
 
 Из документации:
+```
 PC/Server with Nvidia GPU:
 Minimum 16GB GPU memory
 Minimum 32GB RAM
 Minimum 80GB disk space (required for Docker image)
+```
 
 Получить роль в дискорде:
 В ветке join-run запускаем `!join-run`
